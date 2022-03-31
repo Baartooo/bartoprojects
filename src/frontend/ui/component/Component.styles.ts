@@ -1,7 +1,9 @@
-import { Styles } from '../../theme/types';
+import { MantineTheme } from '@mantine/core';
 
-const button: Styles = () => ({
+import { Styles } from '@/theme/types';
+
+export const box: Styles = (theme: MantineTheme) => ({
   '&:hover': {
-    backgroundColor: 'red',
+    backgroundColor: theme.colors.red[5],
   },
 });

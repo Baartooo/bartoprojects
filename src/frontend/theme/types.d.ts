@@ -1,4 +1,3 @@
-import { Sx } from '@mantine/core';
-import { Theme } from '@emotion/react';
+import { MantineTheme, Sx } from '@mantine/core';
 
-export type Styles = Sx<Theme>;
+export type Styles = Sx<MantineTheme>;
