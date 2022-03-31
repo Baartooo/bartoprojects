@@ -1,13 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import { Button } from '@mantine/core';
 
-const Home: NextPage = () => {
-  return (
-    <header style={{ padding: 24 }}>
-      <Button>let&apos;s start!</Button>
-    </header>
-  );
-};
+import { HomePage } from '@/app/home/Home';
 
-export default Home;
+export default HomePage;
