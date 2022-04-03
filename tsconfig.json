@@ -19,6 +19,7 @@
       "@/frontend/*": ["src/frontend/*"],
       "@/theme/*": ["src/frontend/theme/*"],
       "@/ui/*": ["src/frontend/ui/*"],
+      "@/assets/*": ["src/frontend/assets/*"],
       "@/app/*": ["src/frontend/app/*"],
       "@/backend/*": ["src/backend/*"],
     }

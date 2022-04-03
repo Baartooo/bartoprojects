@@ -2,8 +2,15 @@ import React from 'react';
 import { NextPage } from 'next';
 import { Paper } from '@mantine/core';
 
-import { paper } from '@/app/home/Home.styles';
+import { paper, useHomeStyles } from '@/app/home/Home.styles';
+import TLogo from '@/assets/svg/T_text.svg';
 
 export const HomePage: NextPage = () => {
-  return <Paper sx={paper}>hi</Paper>;
+  const { classes } = useHomeStyles();
+
+  return (
+    <Paper sx={paper}>
+      <TLogo className={classes.logo} />
+    </Paper>
+  );
 };
