@@ -1,16 +1,22 @@
-import { createStyles, MantineTheme } from '@mantine/core';
-
-import { Styles } from '@/theme/types';
+import { createStyles } from '@mantine/core';
 
 export const useHomeStyles = createStyles({
+  header: {
+    width: '100vw',
+    minHeight: '100vh',
+    position: 'relative',
+  },
+
   logo: {
     fill: '#ffffff',
   },
-});
 
-export const paper: Styles = (theme: MantineTheme) => ({
-  backgroundColor: theme.colors.dark[7],
-  borderRadius: '0',
-  minHeight: '100vh',
-  color: theme.white,
+  imageWrapper: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+
+    width: '100%',
+    height: '100%',
+  },
 });
