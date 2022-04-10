@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { useHomeStyles } from '@/app/home/Home.styles';
 import Hero from '@/assets/images/home-hero.jpg';
+import BPLogo from '@/assets/svg/T_text.svg';
 
 export const HomePage: NextPage = () => {
   const { classes: c } = useHomeStyles();
@@ -19,6 +20,9 @@ export const HomePage: NextPage = () => {
           objectFit={'cover'}
           priority
         />
+      </div>
+      <div className={c.logoWrapper}>
+        <BPLogo className={c.logo} />
       </div>
     </header>
   );
