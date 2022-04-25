@@ -16,14 +16,14 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/frontend/*": ["src/frontend/*"],
-      "@/theme/*": ["src/frontend/theme/*"],
-      "@/ui/*": ["src/frontend/ui/*"],
-      "@/assets/*": ["src/frontend/assets/*"],
-      "@/app/*": ["src/frontend/app/*"],
-      "@/backend/*": ["src/backend/*"],
+      "@/theme/*": ["src/theme/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/ui/*": ["src/ui/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/app/*": ["src/app/*"],
+      "@/i18n/*": ["src/i18n/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
   "exclude": ["node_modules"],
 }
