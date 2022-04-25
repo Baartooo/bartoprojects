@@ -2,7 +2,7 @@ import { createStyles } from '@mantine/core';
 
 import { zIndexes } from '@/theme/theme';
 
-export const useHeroStyles = createStyles({
+export const useHeroStyles = createStyles((theme) => ({
   header: {
     position: 'relative',
     display: 'flex',
@@ -29,9 +29,17 @@ export const useHeroStyles = createStyles({
     position: 'absolute',
     top: 0,
     left: 0,
-
     width: '100%',
     height: '100%',
     zIndex: zIndexes.heroImage,
   },
-});
+
+  mask: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    height: 80,
+    width: '100%',
+    background: `linear-gradient(180deg, rgb(44 46 51 / 0%) 0%, ${theme.colors.dark[5]} 100%)`,
+  },
+}));

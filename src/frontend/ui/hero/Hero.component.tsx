@@ -23,6 +23,7 @@ export const Hero = () => {
       <div className={c.logoWrapper}>
         <BPLogo className={c.logo} />
       </div>
+      <div className={c.mask} />
     </header>
   );
 };
