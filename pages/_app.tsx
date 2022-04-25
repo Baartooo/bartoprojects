@@ -1,12 +1,11 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, Global } from '@mantine/core';
 
-import '../src/frontend/theme/globals.css';
-import { theme } from '@/theme/theme';
+import { themeOverride } from '@/theme/theme';
 
-export default function App(props: AppProps) {
+const App = (props: AppProps) => {
   const { Component, pageProps } = props;
 
   return (
@@ -16,9 +15,31 @@ export default function App(props: AppProps) {
         <meta name={'viewport'} content={'minimum-scale=1, initial-scale=1, width=device-width'} />
       </Head>
 
-      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={themeOverride}>
+        <Global
+          styles={(theme) => ({
+            '*, *::before, *::after': {
+              boxSizing: 'border-box',
+            },
+
+            html: {
+              padding: 0,
+              margin: 0,
+            },
+
+            body: {
+              ...theme.fn.fontStyles(),
+              padding: 0,
+              margin: 0,
+              backgroundColor: theme.colors.dark[5],
+              color: theme.white,
+            },
+          })}
+        />
         <Component {...pageProps} />
       </MantineProvider>
     </>
   );
-}
+};
+// eslint-disable-next-line import/no-default-export
+export default App;
