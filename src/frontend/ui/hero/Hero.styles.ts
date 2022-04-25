@@ -2,7 +2,7 @@ import { createStyles } from '@mantine/core';
 
 import { zIndexes } from '@/theme/theme';
 
-export const useHomeStyles = createStyles({
+export const useHeroStyles = createStyles({
   header: {
     position: 'relative',
     display: 'flex',
