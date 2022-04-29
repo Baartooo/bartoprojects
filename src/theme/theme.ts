@@ -17,5 +17,10 @@ export const themeOverride: MantineThemeOverride = {
   headings: {
     fontFamily: 'Nunito Sans, sans-serif',
     fontWeight: 900,
+    sizes: {
+      h1: {
+        fontSize: 64,
+      },
+    },
   },
 };

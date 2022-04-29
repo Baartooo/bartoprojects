@@ -1,9 +1,21 @@
 import React from 'react';
-import { Paper } from '@mantine/core';
+import { Paper, Text } from '@mantine/core';
 
 import { CardProps } from '@/ui/card/Card.types';
-import { wrapperStyles } from '@/ui/card/Card.styles';
+import { nameStyles, releaseDateStyles, useCardStyles, wrapperStyles } from '@/ui/card/Card.styles';
+import { Medium } from '@/ui/medium/Medium';
 
 export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) => {
-  return <Paper sx={wrapperStyles}>{name}</Paper>;
+  const { classes: c } = useCardStyles();
+  return (
+    <Paper sx={wrapperStyles} p={'xl'}>
+      <Text component={'h2'} sx={nameStyles}>
+        {name}
+      </Text>
+      <Text component={'p'} sx={releaseDateStyles}>
+        {releaseDate}
+      </Text>
+      <Medium type={mediumType} className={c.medium} />
+    </Paper>
+  );
 };
