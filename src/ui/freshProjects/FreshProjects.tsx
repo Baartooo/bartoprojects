@@ -8,8 +8,15 @@ import { containerStyles } from '@/ui/freshProjects/FreshProjects.styles';
 export const FreshProjects = ({ projects }: FreshProjectsProps) => {
   return (
     <Container sx={containerStyles} size={'lg'}>
-      {projects.items.map((project) => (
-        <Card key={project.sys.id} />
+      {projects.items.map(({ fields, sys }) => (
+        <Card
+          key={sys.id}
+          name={fields.name}
+          slug={fields.slug}
+          cover={fields.cover}
+          releaseDate={fields.releaseDate}
+          mediumType={fields.mediumType}
+        />
       ))}
     </Container>
   );
