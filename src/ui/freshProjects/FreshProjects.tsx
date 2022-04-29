@@ -3,15 +3,16 @@ import { Container, Text } from '@mantine/core';
 
 import { FreshProjectsProps } from '@/ui/freshProjects/FreshProjects.types';
 import { Card } from '@/ui/card/Card';
-import { headerStyles, useFreshProjectsStyles } from '@/ui/freshProjects/FreshProjects.styles';
+import { containerStyles, headerStyles, useFreshProjectsStyles } from '@/ui/freshProjects/FreshProjects.styles';
 
 export const FreshProjects = ({ projects }: FreshProjectsProps) => {
   const { classes: c } = useFreshProjectsStyles();
   return (
-    <Container size={'lg'}>
+    <Container size={'lg'} sx={containerStyles}>
       <Text sx={headerStyles} component={'h1'}>
         Fresh projects
       </Text>
+      <div className={c.separator} />
       <div className={c.projects}>
         {projects.items.map(({ fields, sys }) => (
           <Card
