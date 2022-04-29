@@ -11,11 +11,13 @@ export const useFreshProjectsStyles = createStyles((theme) => ({
   },
 
   separator: {
+    marginTop: theme.spacing.md,
     marginBottom: 2 * theme.spacing.xl,
     height: 1,
     background: theme.white,
     maxWidth: 800,
     width: '100%',
+    opacity: 0.5,
   },
 }));
 
