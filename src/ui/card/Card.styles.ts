@@ -54,9 +54,6 @@ export const launchStyles: Styles = (theme) => ({
   position: 'absolute',
   right: theme.spacing.xl,
   top: theme.spacing.xl,
-  path: {
-    fill: theme.white,
-  },
 });
 
 export const imageWrapperStyles: Styles = () => ({
