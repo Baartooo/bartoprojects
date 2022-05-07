@@ -12,4 +12,15 @@ export const zIndexes = {
   homeLogo,
 };
 
-export const themeOverride: MantineThemeOverride = {};
+export const themeOverride: MantineThemeOverride = {
+  fontFamily: 'Inter, sans-serif',
+  headings: {
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: 900,
+    sizes: {
+      h1: {
+        fontSize: 40,
+      },
+    },
+  },
+};

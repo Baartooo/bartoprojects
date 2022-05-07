@@ -8,7 +8,7 @@ export enum MediumType {
   DSLR = 'dslr',
 }
 
-type Project = {
+export type Project = {
   name: string;
   slug: string;
   cover: Asset;
