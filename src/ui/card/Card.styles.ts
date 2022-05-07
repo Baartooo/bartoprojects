@@ -1,34 +1,13 @@
-import { createStyles } from '@mantine/core';
-
 import { Styles } from '@/theme/theme.types';
-
-export const useCardStyles = createStyles((theme) => ({
-  medium: {
-    marginTop: 2 * theme.spacing.lg,
-    width: 32,
-    height: 32,
-  },
-
-  launchIcon: {
-    position: 'absolute',
-    right: theme.spacing.md,
-    top: theme.spacing.md,
-    path: {
-      fill: theme.white,
-    },
-  },
-}));
 
 export const wrapperStyles: Styles = (theme) => ({
   position: 'relative',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'flex-end',
   width: 320,
   height: 480,
   backgroundColor: theme.black,
   borderRadius: theme.radius.md,
   transformOrigin: 'center',
+  overflow: 'hidden',
 
   [`@media (min-width: ${theme.breakpoints.md}px)`]: {
     cursor: 'pointer',
@@ -38,12 +17,15 @@ export const wrapperStyles: Styles = (theme) => ({
       boxShadow: `0 0 10px rgb(0 0 0 / 35%)`,
     },
 
-    '> svg:last-child': {
+    'a > svg:last-child': {
       display: 'none',
     },
-    '&:hover > svg:last-child': {
+    '&:hover a > svg:last-child': {
       display: 'block',
     },
+  },
+  ['a']: {
+    textDecoration: 'none',
   },
 });
 
@@ -60,4 +42,37 @@ export const releaseDateStyles: Styles = (theme) => ({
   marginTop: theme.spacing.xs,
   fontWeight: '300',
   color: theme.white,
+});
+
+export const mediumStyles: Styles = (theme) => ({
+  marginTop: 2 * theme.spacing.lg,
+  width: 32,
+  height: 32,
+});
+
+export const launchStyles: Styles = (theme) => ({
+  position: 'absolute',
+  right: theme.spacing.xl,
+  top: theme.spacing.xl,
+  path: {
+    fill: theme.white,
+  },
+});
+
+export const imageWrapperStyles: Styles = () => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: 0,
+});
+
+export const detailsStyles: Styles = () => ({
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  width: '100%',
+  height: '100%',
 });

@@ -1,23 +1,46 @@
 import React from 'react';
-import { Paper, Text } from '@mantine/core';
+import Image from 'next/image';
+import { Box, Paper, Text } from '@mantine/core';
+import { NextLink } from '@mantine/next';
 
 import { CardProps } from '@/ui/card/Card.types';
-import { nameStyles, releaseDateStyles, useCardStyles, wrapperStyles } from '@/ui/card/Card.styles';
+import {
+  detailsStyles,
+  imageWrapperStyles,
+  launchStyles,
+  mediumStyles,
+  nameStyles,
+  releaseDateStyles,
+  wrapperStyles,
+} from '@/ui/card/Card.styles';
 import { Medium } from '@/ui/medium/Medium';
 import Launch from '@/assets/svg/launch.svg';
+import { getProjectRoute } from '../../routes/routes';
 
 export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) => {
-  const { classes: c } = useCardStyles();
   return (
     <Paper sx={wrapperStyles} p={'xl'}>
-      <Text component={'h2'} sx={nameStyles}>
-        {name}
-      </Text>
-      <Text component={'p'} sx={releaseDateStyles}>
-        {releaseDate}
-      </Text>
-      <Medium type={mediumType} className={c.medium} />
-      <Launch className={c.launchIcon} />
+      <NextLink href={getProjectRoute(slug)}>
+        <Box component={'div'} sx={imageWrapperStyles}>
+          <Image
+            layout={'fixed'}
+            src={`https:${cover.fields.file.url}`}
+            alt={cover.fields.title}
+            width={320}
+            height={480}
+          />
+        </Box>
+        <Box component={'div'} sx={detailsStyles}>
+          <Text component={'h2'} sx={nameStyles}>
+            {name}
+          </Text>
+          <Text component={'p'} sx={releaseDateStyles}>
+            {releaseDate}
+          </Text>
+          <Box component={Medium} type={mediumType} sx={mediumStyles} />
+        </Box>
+        <Box component={Launch} sx={launchStyles} />
+      </NextLink>
     </Paper>
   );
 };
