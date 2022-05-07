@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-import { Styles } from '@/theme/types';
+import { Styles } from '@/theme/theme.types';
 
 export const useFreshProjectsStyles = createStyles((theme) => ({
   projects: {
@@ -31,7 +31,8 @@ export const containerStyles: Styles = () => ({
 });
 
 export const headerStyles: Styles = (theme) => ({
-  ...theme.headings,
+  fontFamily: theme.headings.fontFamily,
+  fontWeight: theme.headings.fontWeight,
   fontSize: 32,
   marginTop: 2 * theme.spacing.xl,
   marginBottom: 0,

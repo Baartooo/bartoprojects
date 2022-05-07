@@ -1,9 +1,8 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider, Global } from '@mantine/core';
 
-import { themeOverride } from '@/theme/theme';
+import { AppProviders } from '../src/providers/AppProviders';
 
 const App = (props: AppProps) => {
   const { Component, pageProps } = props;
@@ -14,30 +13,9 @@ const App = (props: AppProps) => {
         <title>Page title</title>
         <meta name={'viewport'} content={'minimum-scale=1, initial-scale=1, width=device-width'} />
       </Head>
-
-      <MantineProvider withGlobalStyles withNormalizeCSS theme={themeOverride}>
-        <Global
-          styles={(theme) => ({
-            '*, *::before, *::after': {
-              boxSizing: 'border-box',
-            },
-
-            html: {
-              padding: 0,
-              margin: 0,
-            },
-
-            body: {
-              ...theme.fn.fontStyles(),
-              padding: 0,
-              margin: 0,
-              backgroundColor: theme.colors.dark[5],
-              color: theme.white,
-            },
-          })}
-        />
+      <AppProviders>
         <Component {...pageProps} />
-      </MantineProvider>
+      </AppProviders>
     </>
   );
 };

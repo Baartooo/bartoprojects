@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-import { Styles } from '@/theme/types';
+import { Styles } from '@/theme/theme.types';
 
 export const useCardStyles = createStyles((theme) => ({
   medium: {
@@ -48,7 +48,8 @@ export const wrapperStyles: Styles = (theme) => ({
 });
 
 export const nameStyles: Styles = (theme) => ({
-  ...theme.headings,
+  fontFamily: theme.headings.fontFamily,
+  fontWeight: theme.headings.fontWeight,
   margin: 0,
   color: theme.white,
   fontSize: 24,
