@@ -19,7 +19,7 @@ export const themeOverride: MantineThemeOverride = {
     fontWeight: 900,
     sizes: {
       h1: {
-        fontSize: 64,
+        fontSize: 40,
       },
     },
   },

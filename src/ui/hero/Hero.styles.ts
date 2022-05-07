@@ -14,8 +14,11 @@ export const useHeroStyles = createStyles((theme) => ({
 
   logoWrapper: {
     position: 'relative',
-    width: 440,
+    width: 300,
     zIndex: zIndexes.homeLogo,
+    [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+      width: 360,
+    },
   },
 
   logo: {
