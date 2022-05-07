@@ -4,6 +4,7 @@ import { Paper, Text } from '@mantine/core';
 import { CardProps } from '@/ui/card/Card.types';
 import { nameStyles, releaseDateStyles, useCardStyles, wrapperStyles } from '@/ui/card/Card.styles';
 import { Medium } from '@/ui/medium/Medium';
+import Launch from '@/assets/svg/launch.svg';
 
 export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) => {
   const { classes: c } = useCardStyles();
@@ -16,6 +17,7 @@ export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) 
         {releaseDate}
       </Text>
       <Medium type={mediumType} className={c.medium} />
+      <Launch className={c.launchIcon} />
     </Paper>
   );
 };

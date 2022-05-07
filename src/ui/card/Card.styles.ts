@@ -8,6 +8,15 @@ export const useCardStyles = createStyles((theme) => ({
     width: 32,
     height: 32,
   },
+
+  launchIcon: {
+    position: 'absolute',
+    right: theme.spacing.md,
+    top: theme.spacing.md,
+    path: {
+      fill: theme.white,
+    },
+  },
 }));
 
 export const wrapperStyles: Styles = (theme) => ({
@@ -19,6 +28,23 @@ export const wrapperStyles: Styles = (theme) => ({
   height: 480,
   backgroundColor: theme.black,
   borderRadius: theme.radius.md,
+  transformOrigin: 'center',
+
+  [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+    cursor: 'pointer',
+    transition: '100ms',
+    ['&:hover']: {
+      transform: 'scale(1.01)',
+      boxShadow: `0 0 10px rgb(0 0 0 / 35%)`,
+    },
+
+    '> svg:last-child': {
+      display: 'none',
+    },
+    '&:hover > svg:last-child': {
+      display: 'block',
+    },
+  },
 });
 
 export const nameStyles: Styles = (theme) => ({
