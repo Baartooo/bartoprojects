@@ -23,6 +23,7 @@
       "@/app/*": ["src/app/*"],
       "@/i18n/*": ["src/i18n/*"],
       "@/provider/*": ["src/providers/*"],
+      "@/routes/*": ["src/routes/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
