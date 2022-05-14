@@ -1,4 +1,4 @@
-import { Asset, AssetCollection, EntryCollection, RichTextContent } from 'contentful';
+import { Asset, AssetCollection, Entry, EntryCollection, RichTextContent } from 'contentful';
 
 import { Locale } from '@/i18n/i18n.types';
 
@@ -20,6 +20,7 @@ export type Project = {
 };
 
 export type ContentfulProjects = EntryCollection<Project>;
+export type ContentfulProject = Entry<Project>;
 
 export type Query = {
   locale: Locale;

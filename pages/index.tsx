@@ -7,7 +7,7 @@ import { ContentfulProjects } from '@/lib/contentful/projects/projects.types';
 import { HomeProps } from '@/app/home/Home.types';
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const projects: ContentfulProjects = await getProjects({
+  const projects = await getProjects({
     locale: ctx.locale as Locale,
     limit: 3,
     order: 'fields.releaseDate',
