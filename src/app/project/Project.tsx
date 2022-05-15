@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Project = () => {
+export const ProjectPage = () => {
   return <>project</>;
 };

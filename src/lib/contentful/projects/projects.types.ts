@@ -27,3 +27,5 @@ export type Query = {
   limit?: number;
   order?: string;
 };
+
+export type ProjectsInAllLanguages = Record<Locale, ContentfulProjects>;

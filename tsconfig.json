@@ -16,14 +16,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/theme/*": ["src/theme/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/ui/*": ["src/ui/*"],
-      "@/assets/*": ["src/assets/*"],
-      "@/app/*": ["src/app/*"],
-      "@/i18n/*": ["src/i18n/*"],
-      "@/provider/*": ["src/providers/*"],
-      "@/routes/*": ["src/routes/*"],
+      "@/*": ["src/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],

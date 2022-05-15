@@ -1,32 +1,59 @@
-import React from 'react';
-import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Project } from '@/app/project/Project';
-import { getProjects } from '@/lib/contentful/projects/projects';
+import { ProjectPage } from '@/app/project/Project';
+import { getProject, getProjects } from '@/lib/contentful/projects/projects';
 import { Locale } from '@/i18n/i18n.types';
+import { ProjectProps } from '@/app/project/Project.types';
+import { cache } from '@/api';
+import { ContentfulProjects, ProjectsInAllLanguages } from '@/lib/contentful/projects/projects.types';
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const projects = await getProjects({
-    locale: Locale.Default,
-    order: 'fields.releaseDate',
-  });
+  const projectsEntries: [Locale, ContentfulProjects][] = [];
 
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  for (const _locale of ctx.locales!) {
+    const locale = _locale as Locale;
+    projectsEntries.push([
+      locale,
+      await getProjects({
+        locale,
+        order: 'fields.releaseDate',
+      }),
+    ]);
+  }
+
+  const projects = projectsEntries.reduce<ProjectsInAllLanguages>((acc, curr) => {
+    const [locale, project] = curr;
+    acc[locale] = project;
+    return acc;
+  }, {} as ProjectsInAllLanguages);
+
+  await cache.set(projects);
+
+  // todo: create paths
   return {
-    paths: projects.items.map((project) => ({
-      params: {
-        slug: project.fields.slug,
-      },
-    })),
+    paths: [],
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps<ProjectProps> = async (ctx) => {
   const slug = ctx.params?.slug;
   if (!slug) {
     throw Error(`Project's slug param was not provided by getStaticPath`);
   }
-  //todo: think about how to get project by slug or provide additionally id
-};
 
-export default Project;
+  const project = await cache.get(slug as string, ctx.locale as Locale);
+
+  if (!project) {
+    throw Error(`Failed to get project from cache`);
+  }
+
+  return {
+    props: {
+      project,
+    },
+  };
+};
+// eslint-disable-next-line import/no-default-export
+export default ProjectPage;
