@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { ProjectPage } from '@/app/project/Project';
-import { getProject, getProjects } from '@/lib/contentful/projects/projects';
+import { getProjects } from '@/lib/contentful/projects/projects';
 import { Locale } from '@/i18n/i18n.types';
 import { ProjectProps } from '@/app/project/Project.types';
 import { cache } from '@/api';
@@ -10,9 +10,12 @@ import { ContentfulProjects, ProjectsInAllLanguages } from '@/lib/contentful/pro
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const projectsEntries: [Locale, ContentfulProjects][] = [];
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  for (const _locale of ctx.locales!) {
-    const locale = _locale as Locale;
+  if (!ctx.locales) {
+    throw Error('Locales not found');
+  }
+  const locales = ctx.locales as Locale[];
+
+  for (const locale of locales) {
     projectsEntries.push([
       locale,
       await getProjects({
@@ -30,9 +33,17 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   await cache.set(projects);
 
-  // todo: create paths
+  const paths: { params: { slug: string }; locale: Locale }[] = locales.flatMap((locale) => {
+    return projects[locale].items.map((project) => ({
+      params: {
+        slug: project.fields.slug,
+      },
+      locale,
+    }));
+  });
+
   return {
-    paths: [],
+    paths,
     fallback: false,
   };
 };
