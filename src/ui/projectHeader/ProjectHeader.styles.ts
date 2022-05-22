@@ -11,3 +11,30 @@ export const headerStyles: Styles = (theme) => ({
     ...theme.headings.sizes.h1,
   },
 });
+
+export const detailStyles: Styles = (theme) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: theme.spacing.xl,
+  gap: theme.spacing.xs,
+});
+
+export const detailHeaderStyles: Styles = (theme) => ({
+  fontFamily: theme.headings.fontFamily,
+  fontWeight: theme.headings.fontWeight,
+  fontSize: 24,
+  fontStyle: 'italic',
+  marginBottom: 0,
+  [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+    ...theme.headings.sizes.h2,
+  },
+});
+
+export const detailContentStyles: Styles = () => ({
+  fontSize: 16,
+  fontWeight: 300,
+});
+
+export const bottomSeparatorStyles: Styles = (theme) => ({
+  marginTop: theme.spacing.xl,
+});
