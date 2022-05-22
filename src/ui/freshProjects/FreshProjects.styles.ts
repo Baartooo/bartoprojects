@@ -1,5 +1,10 @@
 import { Styles } from '@/theme/theme.types';
 
+export const separatorStyles: Styles = (theme) => ({
+  marginTop: theme.spacing.md,
+  marginBottom: 2 * theme.spacing.xl,
+});
+
 export const projectsStyles: Styles = (theme) => ({
   display: 'flex',
   flexWrap: 'wrap',

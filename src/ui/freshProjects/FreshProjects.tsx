@@ -3,7 +3,12 @@ import { Box, Container, Text } from '@mantine/core';
 
 import { FreshProjectsProps } from '@/ui/freshProjects/FreshProjects.types';
 import { Card } from '@/ui/card/Card';
-import { containerStyles, headerStyles, projectsStyles } from '@/ui/freshProjects/FreshProjects.styles';
+import {
+  containerStyles,
+  headerStyles,
+  projectsStyles,
+  separatorStyles,
+} from '@/ui/freshProjects/FreshProjects.styles';
 import { Separator } from '@/ui/separator/Separator';
 
 export const FreshProjects = ({ projects }: FreshProjectsProps) => {
@@ -12,7 +17,7 @@ export const FreshProjects = ({ projects }: FreshProjectsProps) => {
       <Text sx={headerStyles} component={'h1'}>
         Fresh projects
       </Text>
-      <Separator />
+      <Separator sx={separatorStyles} />
       <Box component={'div'} sx={projectsStyles}>
         {projects.items.map(({ fields, sys }) => (
           <Card
