@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const ProjectPage = () => {
-  return <>project</>;
+import { ProjectProps } from '@/app/project/Project.types';
+
+export const ProjectPage = ({ project }: ProjectProps) => {
+  return <>{project.fields.name}</>;
 };
