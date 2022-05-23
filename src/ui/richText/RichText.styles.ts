@@ -3,6 +3,9 @@ import { Styles } from '@/theme/theme.types';
 export const contentStyles: Styles = () => ({
   fontWeight: 300,
   fontSize: 16,
+  ['b']: {
+    fontWeight: 700,
+  },
 });
 
 export const anchorStyles: Styles = (theme) => ({
