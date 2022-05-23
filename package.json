@@ -11,7 +11,6 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "15.12.1",
     "@mantine/core": "4.1.0",
     "@mantine/hooks": "4.1.0",
     "@mantine/next": "4.1.0",
@@ -21,6 +20,7 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "@contentful/rich-text-react-renderer": "15.12.1",
     "@contentful/rich-text-types": "15.12.1",
     "@testing-library/jest-dom": "5.16.3",
     "@testing-library/react": "13.0.0",
