@@ -12,6 +12,10 @@ export const headerStyles: Styles = (theme) => ({
   },
 });
 
+export const descriptionStyles: Styles = (theme) => ({
+  marginBottom: 2 * theme.spacing.xl,
+});
+
 export const detailStyles: Styles = (theme) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -24,7 +28,7 @@ export const detailHeaderStyles: Styles = (theme) => ({
   fontWeight: theme.headings.fontWeight,
   fontSize: 24,
   fontStyle: 'italic',
-  marginBottom: 0,
+  margin: 0,
   [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
     ...theme.headings.sizes.h2,
   },

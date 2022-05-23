@@ -18,6 +18,6 @@ const options: Options = {
   },
 };
 
-export const RichText = ({ content }: RichTextProps) => {
-  return <Text sx={contentStyles}>{documentToReactComponents(content, options)}</Text>;
+export const RichText = ({ content, sx = {} }: RichTextProps) => {
+  return <Text sx={[sx, contentStyles]}>{documentToReactComponents(content, options)}</Text>;
 };

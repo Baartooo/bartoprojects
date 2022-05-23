@@ -9,13 +9,13 @@ export const contentStyles: Styles = () => ({
 });
 
 export const anchorStyles: Styles = (theme) => ({
-  padding: '3px 8px',
+  padding: '2px 8px',
   color: theme.colors.blue[5],
   fontWeight: 400,
   lineHeight: 1,
   textDecoration: 'none',
   backgroundColor: theme.colors.gray[9],
-  borderRadius: theme.radius.md,
+  borderRadius: theme.radius.sm,
   transition: '100ms',
   ':hover': {
     backgroundColor: theme.colors.gray[8],

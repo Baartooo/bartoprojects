@@ -5,6 +5,7 @@ import { ProjectHeaderProps } from '@/ui/projectHeader/ProjectHeader.types';
 import { Separator } from '@/ui/separator/Separator';
 import {
   bottomSeparatorStyles,
+  descriptionStyles,
   detailContentStyles,
   detailHeaderStyles,
   detailRowStyles,
@@ -23,7 +24,7 @@ export const ProjectHeader = ({ name, releaseDate, medium, mediumType, descripti
       <Text component={'h1'} sx={headerStyles}>
         {name}
       </Text>
-      <RichText content={description} />
+      <RichText content={description} sx={descriptionStyles} />
       <Box component={'div'} sx={detailStyles}>
         <Text component={'h2'} sx={detailHeaderStyles}>
           Wydanie
