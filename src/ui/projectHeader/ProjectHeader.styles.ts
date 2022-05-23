@@ -20,7 +20,6 @@ export const detailStyles: Styles = (theme) => ({
   display: 'flex',
   flexDirection: 'column',
   marginTop: theme.spacing.xl,
-  gap: theme.spacing.xs,
 });
 
 export const detailHeaderStyles: Styles = (theme) => ({
