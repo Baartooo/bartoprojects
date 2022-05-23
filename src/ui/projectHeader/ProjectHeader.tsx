@@ -7,11 +7,15 @@ import {
   bottomSeparatorStyles,
   detailContentStyles,
   detailHeaderStyles,
+  detailRowStyles,
   detailStyles,
   headerStyles,
+  iconStyles,
 } from '@/ui/projectHeader/ProjectHeader.styles';
+import CalendarIcon from '@/assets/svg/calendar.svg';
+import { Medium } from '@/ui/medium/Medium';
 
-export const ProjectHeader = ({ name, releaseDate, medium }: ProjectHeaderProps) => {
+export const ProjectHeader = ({ name, releaseDate, medium, mediumType }: ProjectHeaderProps) => {
   return (
     <Container size={'lg'}>
       <Separator />
@@ -22,13 +26,19 @@ export const ProjectHeader = ({ name, releaseDate, medium }: ProjectHeaderProps)
         <Text component={'h2'} sx={detailHeaderStyles}>
           Released
         </Text>
-        <Text sx={detailContentStyles}>{releaseDate}</Text>
+        <Box component={'div'} sx={detailRowStyles}>
+          <Box component={CalendarIcon} sx={iconStyles} />
+          <Text sx={detailContentStyles}>{releaseDate}</Text>
+        </Box>
       </Box>
       <Box component={'div'} sx={detailStyles}>
         <Text component={'h2'} sx={detailHeaderStyles}>
           Medium
         </Text>
-        <Text sx={detailContentStyles}>{medium}</Text>
+        <Box component={'div'} sx={detailRowStyles}>
+          <Box component={Medium} sx={iconStyles} type={mediumType} />
+          <Text sx={detailContentStyles}>{medium}</Text>
+        </Box>
       </Box>
       <Separator sx={bottomSeparatorStyles} />
     </Container>

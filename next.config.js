@@ -1,3 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withReactSvg = require('next-react-svg');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -8,14 +13,7 @@ const nextConfig = {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    return config;
-  },
+  include: path.resolve(__dirname, 'src/assets/svg'),
 };
 
-module.exports = nextConfig;
+module.exports = withReactSvg(nextConfig);

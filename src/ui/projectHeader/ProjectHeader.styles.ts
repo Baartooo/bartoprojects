@@ -30,6 +30,17 @@ export const detailHeaderStyles: Styles = (theme) => ({
   },
 });
 
+export const detailRowStyles: Styles = (theme) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing.xs,
+});
+
+export const iconStyles: Styles = () => ({
+  width: 24,
+  height: 24,
+});
+
 export const detailContentStyles: Styles = () => ({
   fontSize: 16,
   fontWeight: 300,
