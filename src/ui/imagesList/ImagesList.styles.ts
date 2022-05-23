@@ -5,5 +5,5 @@ export const containerStyles: Styles = (theme) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: theme.spacing.xl,
+  gap: 2 * theme.spacing.xl,
 });

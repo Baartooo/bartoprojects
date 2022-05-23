@@ -10,8 +10,8 @@ const nextConfig = {
     domains: ['images.ctfassets.net'],
   },
   i18n: {
-    locales: ['en-US'],
-    defaultLocale: 'en-US',
+    locales: ['pl'],
+    defaultLocale: 'pl',
   },
   include: path.resolve(__dirname, 'src/assets/svg'),
 };
