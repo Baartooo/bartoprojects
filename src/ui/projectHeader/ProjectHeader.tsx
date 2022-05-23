@@ -18,7 +18,7 @@ import { RichText } from '@/ui/richText/RichText';
 
 export const ProjectHeader = ({ name, releaseDate, medium, mediumType, description }: ProjectHeaderProps) => {
   return (
-    <Container size={'lg'}>
+    <Container size={'md'}>
       <Separator />
       <Text component={'h1'} sx={headerStyles}>
         {name}

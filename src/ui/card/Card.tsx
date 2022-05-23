@@ -15,7 +15,8 @@ import {
 } from '@/ui/card/Card.styles';
 import { Medium } from '@/ui/medium/Medium';
 import Launch from '@/assets/svg/launch.svg';
-import { getProjectRoute } from '../../routes/routes';
+import { getProjectRoute } from '@/routes/routes';
+import { getImageSrc } from '@/lib/contentful/contentful.utils';
 
 export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) => {
   return (
@@ -24,7 +25,7 @@ export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) 
         <Box component={'div'} sx={imageWrapperStyles}>
           <Image
             layout={'fixed'}
-            src={`https:${cover.fields.file.url}`}
+            src={getImageSrc(cover.fields.file.url)}
             alt={cover.fields.title}
             width={320}
             height={480}
