@@ -14,14 +14,16 @@ import {
 } from '@/ui/projectHeader/ProjectHeader.styles';
 import CalendarIcon from '@/assets/svg/calendar.svg';
 import { Medium } from '@/ui/medium/Medium';
+import { RichText } from '@/ui/richText/RichText';
 
-export const ProjectHeader = ({ name, releaseDate, medium, mediumType }: ProjectHeaderProps) => {
+export const ProjectHeader = ({ name, releaseDate, medium, mediumType, description }: ProjectHeaderProps) => {
   return (
     <Container size={'lg'}>
       <Separator />
       <Text component={'h1'} sx={headerStyles}>
         {name}
       </Text>
+      <RichText content={description} />
       <Box component={'div'} sx={detailStyles}>
         <Text component={'h2'} sx={detailHeaderStyles}>
           Released

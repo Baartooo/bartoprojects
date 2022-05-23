@@ -1,10 +1,10 @@
-import { RichTextContent } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 import { MediumType } from '@/lib/contentful/projects/projects.types';
 
 export type ProjectHeaderProps = {
   name: string;
-  description: RichTextContent;
+  description: Document;
   releaseDate: string;
   mediumType: MediumType;
   medium: string;

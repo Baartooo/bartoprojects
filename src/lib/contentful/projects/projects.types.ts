@@ -1,4 +1,5 @@
-import { Asset, AssetCollection, Entry, EntryCollection, RichTextContent } from 'contentful';
+import { Asset, AssetCollection, Entry, EntryCollection } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 import { Locale } from '@/i18n/i18n.types';
 
@@ -15,7 +16,7 @@ export type Project = {
   releaseDate: string;
   mediumType: MediumType;
   medium: string;
-  description: RichTextContent;
+  description: Document;
   images: AssetCollection;
 };
 
