@@ -1,4 +1,5 @@
-import { Asset, AssetCollection, EntryCollection, RichTextContent } from 'contentful';
+import { Asset, Entry, EntryCollection } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 import { Locale } from '@/i18n/i18n.types';
 
@@ -15,14 +16,17 @@ export type Project = {
   releaseDate: string;
   mediumType: MediumType;
   medium: string;
-  description: RichTextContent;
-  images: AssetCollection;
+  description: Document;
+  images: Asset[];
 };
 
 export type ContentfulProjects = EntryCollection<Project>;
+export type ContentfulProject = Entry<Project>;
 
 export type Query = {
   locale: Locale;
   limit?: number;
   order?: string;
 };
+
+export type ProjectsInAllLanguages = Record<Locale, ContentfulProjects>;

@@ -21,6 +21,9 @@ export const themeOverride: MantineThemeOverride = {
       h1: {
         fontSize: 40,
       },
+      h2: {
+        fontSize: 32,
+      },
     },
   },
 };
