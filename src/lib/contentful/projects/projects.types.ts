@@ -16,7 +16,7 @@ export type Project = {
   releaseDate: string;
   mediumType: MediumType;
   medium: string;
-  description: Document;
+  description?: Document;
   images: Asset[];
 };
 
