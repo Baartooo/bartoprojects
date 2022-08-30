@@ -15,13 +15,13 @@ import {
 } from '@/ui/card/Card.styles';
 import { Medium } from '@/ui/medium/Medium';
 import Launch from '@/assets/svg/launch.svg';
-import { getProjectRoute } from '@/routes/routes';
 import { getImageSrc } from '@/lib/contentful/contentful.utils';
+import { Route } from '@/routes/routes.types';
 
 export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) => {
   return (
     <Paper sx={wrapperStyles} p={'xl'}>
-      <NextLink href={getProjectRoute(slug)}>
+      <NextLink href={Route.SingleProject.replace(':slug', slug)}>
         <Box component={'div'} sx={imageWrapperStyles}>
           <Image
             layout={'fixed'}
