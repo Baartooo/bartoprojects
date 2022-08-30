@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Navbar } from '@mantine/core';
+import { Box, Container, Group, Navbar, Button } from '@mantine/core';
 import Link from 'next/link';
 
 import BPLogo from '@/assets/svg/T_text.svg';
@@ -13,6 +13,14 @@ export const Navigation = () => {
         <Link href={Route.Home}>
           <Box component={BPLogo} sx={logoStyles} />
         </Link>
+        <Group spacing={2}>
+          <Link href={Route.Home}>
+            <Button variant={'subtle'}>home</Button>
+          </Link>
+          <Link href={Route.Projects}>
+            <Button variant={'subtle'}>all projects</Button>
+          </Link>
+        </Group>
       </Container>
     </Navbar>
   );

@@ -12,6 +12,7 @@ import {
   detailStyles,
   headerStyles,
   iconStyles,
+  containerStyles,
 } from '@/ui/projectHeader/ProjectHeader.styles';
 import CalendarIcon from '@/assets/svg/calendar.svg';
 import { Medium } from '@/ui/medium/Medium';
@@ -19,8 +20,7 @@ import { RichText } from '@/ui/richText/RichText';
 
 export const ProjectHeader = ({ name, releaseDate, medium, mediumType, description }: ProjectHeaderProps) => {
   return (
-    <Container size={'md'}>
-      <Separator />
+    <Container size={'md'} sx={containerStyles}>
       <Text component={'h1'} sx={headerStyles}>
         {name}
       </Text>
