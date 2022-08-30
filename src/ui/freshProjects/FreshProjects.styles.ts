@@ -1,6 +1,7 @@
 import { Styles } from '@/theme/theme.types';
 
 export const separatorStyles: Styles = (theme) => ({
+  width: '80%',
   marginTop: theme.spacing.md,
   marginBottom: 2 * theme.spacing.xl,
 });
