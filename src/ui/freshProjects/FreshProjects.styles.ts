@@ -6,13 +6,6 @@ export const separatorStyles: Styles = (theme) => ({
   marginBottom: 2 * theme.spacing.xl,
 });
 
-export const projectsStyles: Styles = (theme) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-  gap: theme.spacing.xl,
-});
-
 export const containerStyles: Styles = () => ({
   display: 'flex',
   flexDirection: 'column',

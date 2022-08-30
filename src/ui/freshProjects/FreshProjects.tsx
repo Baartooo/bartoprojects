@@ -1,15 +1,10 @@
 import React from 'react';
-import { Box, Container, Text } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 
 import { FreshProjectsProps } from '@/ui/freshProjects/FreshProjects.types';
-import { Card } from '@/ui/card/Card';
-import {
-  containerStyles,
-  headerStyles,
-  projectsStyles,
-  separatorStyles,
-} from '@/ui/freshProjects/FreshProjects.styles';
+import { containerStyles, headerStyles, separatorStyles } from '@/ui/freshProjects/FreshProjects.styles';
 import { Separator } from '@/ui/separator/Separator';
+import { ProjectsList } from '@/ui/projectsList/ProjectsList';
 
 export const FreshProjects = ({ projects }: FreshProjectsProps) => {
   return (
@@ -18,18 +13,7 @@ export const FreshProjects = ({ projects }: FreshProjectsProps) => {
         Fresh projects
       </Text>
       <Separator sx={separatorStyles} />
-      <Box component={'div'} sx={projectsStyles}>
-        {projects.items.map(({ fields, sys }) => (
-          <Card
-            key={sys.id}
-            name={fields.name}
-            slug={fields.slug}
-            cover={fields.cover}
-            releaseDate={fields.releaseDate}
-            mediumType={fields.mediumType}
-          />
-        ))}
-      </Box>
+      <ProjectsList projects={projects} />
     </Container>
   );
 };
