@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { AppProviders } from '../src/providers/AppProviders';
+import { AppProviders } from '@/providers/AppProviders';
 
 const App = (props: AppProps) => {
   const { Component, pageProps } = props;
@@ -10,8 +10,9 @@ const App = (props: AppProps) => {
   return (
     <>
       <Head>
-        <title>Page title</title>
+        <title>BartoProjects</title>
         <meta name={'viewport'} content={'minimum-scale=1, initial-scale=1, width=device-width'} />
+        <link rel={'icon'} type={'image/x-icon'} href={'/favicon.png'} />
       </Head>
       <AppProviders>
         <Component {...pageProps} />
