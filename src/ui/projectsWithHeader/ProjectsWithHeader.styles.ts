@@ -14,13 +14,13 @@ export const containerStyles: Styles = () => ({
 
 export const headerStyles: Styles = (theme) => ({
   fontFamily: theme.headings.fontFamily,
-  fontWeight: theme.headings.fontWeight,
+  fontWeight: 900,
   fontSize: 32,
   marginTop: 2 * theme.spacing.xl,
   marginBottom: 0,
   textAlign: 'center',
   fontStyle: 'italic',
   [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
-    ...theme.headings.sizes.h1,
+    fontSize: theme.headings.sizes.h1.fontSize,
   },
 });
