@@ -16,10 +16,10 @@ export const Navigation = ({ containerSize = 'md' }: NavigationProps) => {
         </Link>
         <Group spacing={2}>
           <Link href={Route.Home}>
-            <Button variant={'subtle'}>home</Button>
+            <Button variant={'subtle'}>Home</Button>
           </Link>
           <Link href={Route.Projects}>
-            <Button variant={'subtle'}>all projects</Button>
+            <Button variant={'subtle'}>All projects</Button>
           </Link>
         </Group>
       </Container>

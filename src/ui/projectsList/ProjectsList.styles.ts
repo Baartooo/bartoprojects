@@ -6,3 +6,9 @@ export const projectsStyles: Styles = (theme) => ({
   justifyContent: 'center',
   gap: theme.spacing.xl,
 });
+
+export const stayTunedStyles: Styles = () => ({
+  marginBottom: 32,
+  fontWeight: 'bolder',
+  textAlign: 'center',
+});

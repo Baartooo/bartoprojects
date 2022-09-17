@@ -32,7 +32,7 @@ export const wrapperStyles: Styles = (theme) => ({
 
 export const nameStyles: Styles = (theme) => ({
   fontFamily: theme.headings.fontFamily,
-  fontWeight: theme.headings.fontWeight,
+  fontWeight: 900,
   margin: 0,
   color: theme.white,
   fontSize: 24,
@@ -41,7 +41,7 @@ export const nameStyles: Styles = (theme) => ({
 export const releaseDateStyles: Styles = (theme) => ({
   margin: 0,
   marginTop: theme.spacing.xs,
-  fontWeight: '300',
+  fontWeight: 300,
   color: theme.white,
 });
 
