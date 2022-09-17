@@ -9,7 +9,7 @@ export const wrapperStyles: Styles = (theme) => ({
   transformOrigin: 'center',
   overflow: 'hidden',
 
-  [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+  [theme.fn.largerThan('md')]: {
     cursor: 'pointer',
     transition: '100ms',
     ['&:hover']: {
@@ -24,6 +24,7 @@ export const wrapperStyles: Styles = (theme) => ({
       display: 'block',
     },
   },
+
   ['a']: {
     textDecoration: 'none',
   },

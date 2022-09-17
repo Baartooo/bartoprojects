@@ -1,5 +1,9 @@
 import { Styles } from '@/theme/theme.types';
 
+export const containerStyles: Styles = (theme) => ({
+  marginTop: 2 * theme.spacing.xl,
+});
+
 export const headerStyles: Styles = (theme) => ({
   fontFamily: theme.headings.fontFamily,
   fontWeight: theme.headings.fontWeight,

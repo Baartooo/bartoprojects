@@ -1,3 +1,3 @@
 export enum Locale {
-  Pl = 'pl',
+  En = 'en-US',
 }

@@ -1,3 +1,5 @@
 export enum Route {
-  Projects = '/projekty',
+  Home = '/',
+  Projects = '/projects',
+  SingleProject = '/projects/:slug',
 }

@@ -14,6 +14,7 @@ export const zIndexes = {
 
 export const themeOverride: MantineThemeOverride = {
   fontFamily: 'Inter, sans-serif',
+  colorScheme: 'dark',
   headings: {
     fontFamily: 'Nunito Sans, sans-serif',
     fontWeight: 900,
