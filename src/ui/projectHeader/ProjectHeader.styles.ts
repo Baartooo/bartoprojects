@@ -6,13 +6,13 @@ export const containerStyles: Styles = (theme) => ({
 
 export const headerStyles: Styles = (theme) => ({
   fontFamily: theme.headings.fontFamily,
-  fontWeight: theme.headings.fontWeight,
+  fontWeight: 900,
   fontSize: 32,
   marginTop: theme.spacing.sm,
   marginBottom: 0,
   fontStyle: 'italic',
-  [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
-    ...theme.headings.sizes.h1,
+  [theme.fn.largerThan('sm')]: {
+    fontSize: theme.headings.sizes.h1.fontSize,
   },
 });
 
@@ -28,12 +28,12 @@ export const detailStyles: Styles = (theme) => ({
 
 export const detailHeaderStyles: Styles = (theme) => ({
   fontFamily: theme.headings.fontFamily,
-  fontWeight: theme.headings.fontWeight,
+  fontWeight: 900,
   fontSize: 24,
   fontStyle: 'italic',
   margin: 0,
-  [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
-    ...theme.headings.sizes.h2,
+  [theme.fn.largerThan('sm')]: {
+    fontSize: theme.headings.sizes.h2.fontSize,
   },
 });
 
