@@ -26,8 +26,8 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
   }
 
   const projects = projectsEntries.reduce<ProjectsInAllLanguages>((acc, curr) => {
-    const [locale, project] = curr;
-    acc[locale] = project;
+    const [locale, projects] = curr;
+    acc[locale] = projects;
     return acc;
   }, {} as ProjectsInAllLanguages);
 

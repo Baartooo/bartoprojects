@@ -5,11 +5,12 @@ import Link from 'next/link';
 import BPLogo from '@/assets/svg/T_text.svg';
 import { navigationStyles, containerStyles, logoStyles } from '@/ui/navigation/Navigation.styles';
 import { Route } from '@/routes/routes.types';
+import { NavigationProps } from '@/ui/navigation/Navigation.types';
 
-export const Navigation = () => {
+export const Navigation = ({ containerSize = 'lg' }: NavigationProps) => {
   return (
     <Navbar height={30} sx={navigationStyles}>
-      <Container size={'lg'} sx={containerStyles}>
+      <Container size={containerSize} sx={containerStyles}>
         <Link href={Route.Home}>
           <Box component={BPLogo} sx={logoStyles} />
         </Link>

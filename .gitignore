@@ -41,4 +41,4 @@ yarn-error.log*
 .idea
 
 # filesystem cache
-projects.db
+projects.db.json
