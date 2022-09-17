@@ -5,7 +5,7 @@ export const navigationStyles: Styles = (theme) => ({
   top: 0,
   height: 64,
   margin: 0,
-  background: theme.colors.dark[7],
+  background: theme.colors.dark[6],
   color: theme.white,
 });
 

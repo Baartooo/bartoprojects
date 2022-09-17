@@ -27,7 +27,7 @@ export const ProjectHeader = ({ name, releaseDate, medium, mediumType, descripti
       {description && <RichText content={description} sx={descriptionStyles} />}
       <Box component={'div'} sx={detailStyles}>
         <Text component={'h2'} sx={detailHeaderStyles}>
-          Wydanie
+          Release
         </Text>
         <Box component={'div'} sx={detailRowStyles}>
           <Box component={CalendarIcon} sx={iconStyles} />

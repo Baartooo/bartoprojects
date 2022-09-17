@@ -7,7 +7,7 @@ import { navigationStyles, containerStyles, logoStyles } from '@/ui/navigation/N
 import { Route } from '@/routes/routes.types';
 import { NavigationProps } from '@/ui/navigation/Navigation.types';
 
-export const Navigation = ({ containerSize = 'lg' }: NavigationProps) => {
+export const Navigation = ({ containerSize = 'md' }: NavigationProps) => {
   return (
     <Navbar height={30} sx={navigationStyles}>
       <Container size={containerSize} sx={containerStyles}>

@@ -8,7 +8,7 @@ import { Navigation } from '@/ui/navigation/Navigation';
 export const ProjectPage = ({ project }: ProjectProps) => {
   return (
     <>
-      <Navigation containerSize={'md'} />
+      <Navigation />
       <ProjectHeader
         name={project.fields.name}
         description={project.fields.description}
