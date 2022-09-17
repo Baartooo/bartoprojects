@@ -18,7 +18,7 @@ export const HomePage: NextPage<HomeProps> = ({ projects }: HomeProps) => (
     <Box sx={buttonRowStyles}>
       <Link href={Route.Projects}>
         <Button variant={'subtle'} sx={buttonStyles} rightIcon={<TbArrowRight />} size={'lg'}>
-          see more projects
+          See more projects
         </Button>
       </Link>
     </Box>
