@@ -17,7 +17,8 @@ export type Project = {
   mediumType: MediumType;
   medium: string;
   description?: Document;
-  images: Asset[];
+  youTubeVideo?: string;
+  images?: Asset[];
 };
 
 export type ContentfulProjects = EntryCollection<Project>;

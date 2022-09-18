@@ -4,6 +4,7 @@ import { ProjectProps } from '@/app/project/Project.types';
 import { ProjectHeader } from '@/ui/projectHeader/ProjectHeader';
 import { ImagesList } from '@/ui/imagesList/ImagesList';
 import { Navigation } from '@/ui/navigation/Navigation';
+import { Video } from '@/ui/video/Video';
 
 export const ProjectPage = ({ project }: ProjectProps) => {
   return (
@@ -16,7 +17,8 @@ export const ProjectPage = ({ project }: ProjectProps) => {
         mediumType={project.fields.mediumType}
         medium={project.fields.medium}
       />
-      <ImagesList images={project.fields.images} />
+      {project.fields.youTubeVideo && <Video videoCode={project.fields.youTubeVideo} />}
+      {project.fields.images && <ImagesList images={project.fields.images} />}
     </>
   );
 };
