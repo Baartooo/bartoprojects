@@ -26,7 +26,8 @@ export const Card = ({ name, releaseDate, cover, slug, mediumType }: CardProps) 
           <Image
             layout={'fixed'}
             src={getImageSrc(cover.fields.file.url)}
-            alt={cover.fields.title}
+            alt={cover.fields.description}
+            title={cover.fields.title}
             width={320}
             height={480}
           />
