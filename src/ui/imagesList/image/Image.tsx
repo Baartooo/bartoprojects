@@ -14,6 +14,8 @@ export const Image = ({ image }: ImageProps) => {
         layout={'responsive'}
         width={image.fields.file.details.image?.width}
         height={image.fields.file.details.image?.height}
+        alt={image.fields.description}
+        title={image.fields.title}
       />
     </Box>
   );
