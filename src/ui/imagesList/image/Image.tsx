@@ -12,6 +12,7 @@ export const Image = ({ image }: ImageProps) => {
       <NextImage
         src={getImageSrc(image.fields.file.url)}
         layout={'responsive'}
+        quality={70}
         width={image.fields.file.details.image?.width}
         height={image.fields.file.details.image?.height}
         alt={image.fields.description}
