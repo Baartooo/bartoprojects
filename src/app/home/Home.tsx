@@ -8,6 +8,7 @@ import { Hero } from '@/ui/hero/Hero';
 import { HomeProps } from '@/app/home/Home.types';
 import { ProjectsWithHeader } from '@/ui/projectsWithHeader/ProjectsWithHeader';
 import { Route } from '@/routes/routes.types';
+import { Footer } from '@/ui/footer/Footer';
 
 import { buttonStyles, buttonRowStyles } from './Home.styles';
 
@@ -24,5 +25,6 @@ export const HomePage: NextPage<HomeProps> = ({ projects }: HomeProps) => (
         </Link>
       </Box>
     )}
+    <Footer />
   </Box>
 );

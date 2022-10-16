@@ -5,6 +5,7 @@ import { ProjectHeader } from '@/ui/projectHeader/ProjectHeader';
 import { ImagesList } from '@/ui/imagesList/ImagesList';
 import { Navigation } from '@/ui/navigation/Navigation';
 import { Video } from '@/ui/video/Video';
+import { Footer } from '@/ui/footer/Footer';
 
 export const ProjectPage = ({ project }: ProjectProps) => {
   return (
@@ -19,6 +20,7 @@ export const ProjectPage = ({ project }: ProjectProps) => {
       />
       {project.fields.youTubeVideo && <Video videoCode={project.fields.youTubeVideo} />}
       {project.fields.images && <ImagesList images={project.fields.images} />}
+      <Footer />
     </>
   );
 };

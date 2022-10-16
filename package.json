@@ -12,9 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@mantine/core": "5.3.3",
-    "@mantine/hooks": "5.3.3",
-    "@mantine/next": "5.3.3",
+    "@mantine/core": "5.5.5",
+    "@mantine/hooks": "5.5.5",
+    "@mantine/next": "5.5.5",
+    "@mantine/notifications": "5.5.5",
     "contentful": "9.2.4",
     "next": "12.3.0",
     "react": "18.2.0",

@@ -23,7 +23,6 @@ export const MantineProvider = ({ children }: MantineProviderProps) => {
           body: {
             ...theme.fn.fontStyles(),
             padding: 0,
-            paddingBottom: theme.spacing.xl,
             margin: 0,
             backgroundColor: theme.colors.dark[5],
             color: theme.white,
