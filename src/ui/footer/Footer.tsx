@@ -21,6 +21,7 @@ export const Footer = ({ containerSize = 'md' }: NavigationProps) => {
       showNotification({
         title: 'success',
         message: 'copied to clipboard',
+        color: 'green',
       });
     }
   }, [copied]);
